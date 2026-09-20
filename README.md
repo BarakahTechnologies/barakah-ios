@@ -50,9 +50,8 @@ In **Cloudflare Dashboard → Workers & Pages**:
 2. Authorize Cloudflare for the private `BarakahTechnologies/barakah-ios` repository only.
 3. Use project name `barakah-ios` and production branch `main`.
 4. Select no framework preset.
-5. Set the build command to `python3 build/generate.py`.
-6. Set the build output directory to `.` because the generated HTML and `index.html` are in the
-   repository root.
+5. Set the build command to `exit 0` because the generated HTML is committed to the repository.
+6. Set the build output directory to `.` because `index.html` is in the repository root.
 7. Deploy and confirm that the generated `*.pages.dev` address works.
 8. Under **Custom domains**, add `barakah.barakahtechnologies.net`.
 
