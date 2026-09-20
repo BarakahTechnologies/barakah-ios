@@ -1,9 +1,9 @@
 # Barakah — Public Website
 
-This repository hosts the public website for **Barakah**, a private baby and family care tracking app for iOS.
+This repository hosts the Apple-platform public website for **Barakah**, a private baby and family care tracking app for iPhone and iPad.
 
-The site is published via GitHub Pages at:  
-**https://Barakah-app.github.io/iOS**
+The public site is deployed from this private repository at:
+**https://barakah.barakahtechnologies.net/**
 
 ## Pages
 
@@ -34,6 +34,37 @@ Then regenerate and commit the output:
 ```sh
 python3 build/generate.py
 ```
+
+## Repository and deployment privacy
+
+Keep this GitHub repository **private**. The deployed product website is public, but visitors do
+not need access to the source repository.
+
+GitHub Pages on the organization's current plan requires a public repository, so this site should
+be deployed with **Cloudflare Pages**, not GitHub Pages. Do not enable GitHub Pages for this
+repository.
+
+In **Cloudflare Dashboard → Workers & Pages**:
+
+1. Create a Pages application and choose **Import an existing Git repository**.
+2. Authorize Cloudflare for the private `BarakahTechnologies/barakah-ios` repository only.
+3. Use project name `barakah-ios` and production branch `main`.
+4. Select no framework preset.
+5. Set the build command to `python3 build/generate.py`.
+6. Set the build output directory to `.` because the generated HTML and `index.html` are in the
+   repository root.
+7. Deploy and confirm that the generated `*.pages.dev` address works.
+8. Under **Custom domains**, add `barakah.barakahtechnologies.net`.
+
+Add the custom domain from the Pages project and let Cloudflare create or replace its DNS record.
+Remove the old record that points `barakah` to GitHub Pages.
+
+There is intentionally no repository `CNAME` file. That file is used by branch-based GitHub Pages;
+Cloudflare Pages stores custom-domain configuration in the Cloudflare project.
+
+After the Cloudflare Pages deployment and custom domain both work, change this repository from
+public to private. Doing this earlier will take the existing GitHub Pages deployment offline before
+its replacement is ready.
 
 ## About Barakah
 

@@ -18,7 +18,7 @@ SITE_DIR = os.path.dirname(BUILD_DIR)
 CONTENT_DIR = os.path.join(BUILD_DIR, "content")
 CSS_DIR = os.path.join(BUILD_DIR, "css")
 
-BASE = "https://Barakah-app.github.io/iOS"
+BASE = "https://barakah.barakahtechnologies.net"
 LANGS = ["en", "ar", "es", "fr", "tr"]
 RTL = {"ar"}
 BRAND = "Barakah"
@@ -165,6 +165,7 @@ def render_index(lang):
 
   <link rel="icon" type="image/png" href="images/icon.png" />
   <link rel="apple-touch-icon" href="images/icon.png" />
+  <link rel="canonical" href="{BASE}/{fname("index", lang)}" />
 
 {hreflang_block("index")}
 
@@ -208,6 +209,7 @@ def render_inner_page(page, lang):
   <meta name="description" content="{desc}">
   <link rel="icon" type="image/png" href="images/icon.png">
   <link rel="apple-touch-icon" href="images/icon.png">
+  <link rel="canonical" href="{BASE}/{fname(page, lang)}">
 
 {hreflang_block(page)}
   <style>

@@ -1,11 +1,12 @@
 
 <div class="page-header">
+  <p><strong>Apple platformları · iPhone ve iPad</strong></p>
   <h1>Gizlilik Politikası</h1>
   <p>Kısacası: verileriniz cihazınızdan ve iCloud hesabınızdan asla dışarı çıkmaz.</p>
 </div>
 
 <div class="content">
-  <p class="updated">Son güncelleme: 26 Haziran 2026</p>
+  <p class="updated">Son güncelleme: 19 Eylül 2026</p>
 
   <div class="tl-dr">
     <h2>&#x2705; Kısa özet</h2>
@@ -15,7 +16,7 @@
       <li>Verilerinizi saklayan herhangi bir sunucu işletmiyoruz.</li>
       <li>Verilerinizi hiçbir şekilde satmıyor, paylaşmıyor veya para kazanmak için kullanmıyoruz.</li>
       <li>Herhangi bir üçüncü taraf analiz veya reklam SDK'sı içermiyoruz.</li>
-      <li>Uygulamayı silerek dilediğiniz zaman tüm verileri silebilirsiniz.</li>
+      <li>Uygulamayı silmek yerel verilerini kaldırır; iCloud ile eşzamanlanan veriler ayrıca silinmelidir.</li>
     </ul>
   </div>
 
@@ -41,7 +42,7 @@
   <p>Senkronizasyon tamamen Apple'ın altyapısı üzerinden gerçekleşir. BARAKAH TECHNOLOGIES, INC. senkronize edilen hiçbir veriyi almaz, işlemez veya saklamaz.</p>
 
   <h2>5. Cihaz tanımlayıcıları</h2>
-  <p>Barakah, bir cihazı bir Aile Üyesi kaydıyla ilişkilendirmek için sistem Anahtarlığı'nda (Keychain) bir cihaz tanımlayıcısı saklar. Bu tanımlayıcı Apple'ın <code>UIDevice.identifierForVendor</code> değerinden türetilir ve yeniden yüklemelerde de kalıcı olur. Yalnızca kendi aile grubunuz içindeki cihazları ayırt etmek için kullanılır ve BARAKAH TECHNOLOGIES, INC. tarafından işletilen herhangi bir sunucuya asla iletilmez.</p>
+  <p>Barakah, Apple'ın <code>UIDevice.identifierForVendor</code> değerini kullanarak bir cihaz tanımlayıcısı oluşturur ve cihazı bir Aile Üyesi kaydıyla ilişkilendirmek için ortaya çıkan değeri sistem Anahtarlığı'nda (Keychain) saklar. Uygulama silinip yeniden yüklendikten sonra satıcı tanımlayıcısının aynı kalacağı garanti edilmez; Anahtarlık'ta daha önce saklanan bir değer yeniden yükleme sonrasında kullanılabilir durumda kalabilir. Yalnızca kendi aile grubunuz içindeki cihazları ayırt etmek için kullanılır ve BARAKAH TECHNOLOGIES, INC. tarafından işletilen herhangi bir sunucuya asla iletilmez.</p>
 
   <h2>6. Yerel bildirimler</h2>
   <p>Hatırlatıcıları etkinleştirirseniz, Barakah Apple'ın UserNotifications çerçevesi aracılığıyla yerel bildirimler planlar. Hiçbir bildirim verisi cihazınızın dışına iletilmez.</p>
@@ -70,7 +71,7 @@
     <li><strong>Doğrudan iCloud üzerinden:</strong> iPhone Ayarlar → [adınız] → iCloud → Hesap Depolamasını Yönet → Barakah → Verileri Sil yolunu izleyin veya iCloud.com üzerinden iCloud hesap verilerini silin.</li>
     <li>Uygulamayı iPhone/iPad'inizden silmek, verilerin yerel kopyasını da kaldırır.</li>
   </ul>
-  <p>Uygulamayı silmek yerel verileri anında kaldırır. iCloud verilerini kaldırmak, verileri senkronize edilen tüm cihazlardan kaldırır.</p>
+  <p>Uygulamayı silmek yerel verilerini kaldırır ancak daha önce iCloud ile eşzamanlanmış verileri mutlaka silmez. Eşzamanlanmış verileri tüm cihazlardan kaldırmak için yukarıdaki iCloud silme seçeneklerinden birini kullanın.</p>
 
   <h2>13. Güvenlik</h2>
   <p>Barakah, yetkisiz erişimi önlemek için Face ID, Touch ID ve cihaz parola kimlik doğrulamasını destekler. Uygulama kilidi, uygulama arka plandan her açıldığında uygulanır. Cihaz tanımlayıcısı, Anahtarlık'ta <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> koruması ile saklanır; böylece yalnızca bu cihazda kalır, şifreli yedeklere dahil edilmez veya başka bir cihaza aktarılmaz.</p>
@@ -81,4 +82,3 @@
   <h2>15. İletişim</h2>
   <p>Gizlilikle ilgili sorularınız veya endişeleriniz mi var? Bize <a href="mailto:barakah-app@proton.me">barakah-app@proton.me</a> adresinden e-posta gönderin.</p>
 </div>
-

@@ -7,13 +7,14 @@
   <meta name="description" content="Politique de confidentialité de Barakah. Vos données restent sur votre appareil et votre compte iCloud privé. Aucun serveur tiers, aucun suivi.">
   <link rel="icon" type="image/png" href="images/icon.png">
   <link rel="apple-touch-icon" href="images/icon.png">
+  <link rel="canonical" href="https://barakah.barakahtechnologies.net/privacy.fr.html">
 
-  <link rel="alternate" hreflang="en" href="https://Barakah-app.github.io/iOS/privacy.html" />
-  <link rel="alternate" hreflang="ar" href="https://Barakah-app.github.io/iOS/privacy.ar.html" />
-  <link rel="alternate" hreflang="es" href="https://Barakah-app.github.io/iOS/privacy.es.html" />
-  <link rel="alternate" hreflang="fr" href="https://Barakah-app.github.io/iOS/privacy.fr.html" />
-  <link rel="alternate" hreflang="tr" href="https://Barakah-app.github.io/iOS/privacy.tr.html" />
-  <link rel="alternate" hreflang="x-default" href="https://Barakah-app.github.io/iOS/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://barakah.barakahtechnologies.net/privacy.html" />
+  <link rel="alternate" hreflang="ar" href="https://barakah.barakahtechnologies.net/privacy.ar.html" />
+  <link rel="alternate" hreflang="es" href="https://barakah.barakahtechnologies.net/privacy.es.html" />
+  <link rel="alternate" hreflang="fr" href="https://barakah.barakahtechnologies.net/privacy.fr.html" />
+  <link rel="alternate" hreflang="tr" href="https://barakah.barakahtechnologies.net/privacy.tr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barakah.barakahtechnologies.net/privacy.html" />
   <style>
     :root {
       --teal: #45B8AC;
@@ -120,12 +121,13 @@
 </header>
 
 <div class="page-header">
+  <p><strong>Plateformes Apple · iPhone et iPad</strong></p>
   <h1>Politique de confidentialité</h1>
   <p>Version courte : vos données ne quittent jamais votre appareil et votre compte iCloud.</p>
 </div>
 
 <div class="content">
-  <p class="updated">Dernière mise à jour : 26 juin 2026</p>
+  <p class="updated">Dernière mise à jour : 19 septembre 2026</p>
 
   <div class="tl-dr">
     <h2>&#x2705; La version courte</h2>
@@ -135,7 +137,7 @@
       <li>Nous n'exploitons aucun serveur qui stocke vos données.</li>
       <li>Nous ne vendons, ne partageons et ne monétisons vos données d'aucune manière.</li>
       <li>Nous n'intégrons aucun SDK d'analyse ou de publicité tiers.</li>
-      <li>Vous pouvez supprimer toutes les données à tout moment en supprimant l'application.</li>
+      <li>La suppression de l'application efface ses données locales ; les données synchronisées avec iCloud doivent être supprimées séparément.</li>
     </ul>
   </div>
 
@@ -161,7 +163,7 @@
   <p>La synchronisation s'effectue entièrement via l'infrastructure d'Apple. BARAKAH TECHNOLOGIES, INC. ne reçoit, ne traite ni ne stocke aucune donnée synchronisée.</p>
 
   <h2>5. Identifiants de l'appareil</h2>
-  <p>Barakah stocke un identifiant d'appareil dans le trousseau (Keychain) du système afin d'associer un appareil à une fiche de membre de la famille. Cet identifiant est dérivé de <code>UIDevice.identifierForVendor</code> d'Apple et persiste après une réinstallation. Il sert uniquement à distinguer les appareils au sein de votre propre groupe familial et n'est jamais transmis à un serveur exploité par BARAKAH TECHNOLOGIES, INC.</p>
+  <p>Barakah crée un identifiant d'appareil à l'aide de <code>UIDevice.identifierForVendor</code> d'Apple et stocke la valeur obtenue dans le trousseau (Keychain) du système afin d'associer un appareil à une fiche de membre de la famille. Il n'est pas garanti que l'identifiant du fournisseur reste identique après la suppression et la réinstallation de l'application ; une valeur déjà enregistrée dans le trousseau peut rester disponible après une réinstallation. Il sert uniquement à distinguer les appareils au sein de votre propre groupe familial et n'est jamais transmis à un serveur exploité par BARAKAH TECHNOLOGIES, INC.</p>
 
   <h2>6. Notifications locales</h2>
   <p>Si vous activez les rappels, Barakah planifie des notifications locales via le framework UserNotifications d'Apple. Aucune donnée de notification n'est transmise hors de votre appareil.</p>
@@ -190,7 +192,7 @@
     <li><strong>Directement depuis iCloud :</strong> Accédez à Réglages iPhone → [votre nom] → iCloud → Gérer le stockage du compte → Barakah → Supprimer les données, ou supprimez les données du compte iCloud sur iCloud.com.</li>
     <li>La suppression de l'application depuis votre iPhone/iPad supprime également sa copie locale des données.</li>
   </ul>
-  <p>La suppression de l'application efface immédiatement les données locales. La suppression des données iCloud les efface de tous les appareils synchronisés.</p>
+  <p>La suppression de l'application efface ses données locales, mais ne supprime pas nécessairement les données déjà synchronisées avec iCloud. Utilisez l'une des options de suppression iCloud ci-dessus pour effacer les données synchronisées de tous les appareils.</p>
 
   <h2>13. Sécurité</h2>
   <p>Barakah prend en charge l'authentification par Face ID, Touch ID et le code d'accès de l'appareil afin d'empêcher tout accès non autorisé. Le verrouillage de l'application est appliqué chaque fois qu'elle est rouverte depuis l'arrière-plan. L'identifiant de l'appareil est stocké dans le trousseau (Keychain) avec la protection <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>, de sorte qu'il reste uniquement sur cet appareil et n'est jamais inclus dans les sauvegardes chiffrées ni transféré vers un autre appareil.</p>
