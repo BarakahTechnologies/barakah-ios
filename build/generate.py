@@ -22,7 +22,7 @@ BASE = "https://barakah.barakahtechnologies.net"
 LANGS = ["en", "ar", "es", "fr", "tr"]
 RTL = {"ar"}
 BRAND = "Barakah"
-CONTACT_EMAIL = "barakah-app@proton.me"
+CONTACT_EMAIL = "support@barakahtechnologies.net"
 
 # ---- per-language UI strings (shared across all three page types) --------------------------
 UI = {

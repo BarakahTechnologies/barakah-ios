@@ -69,5 +69,5 @@ its replacement is ready.
 
 Barakah helps parents log feedings, sleep, diapers, growth measurements, medications, and milestones. Data syncs privately through iCloud — no account required, no third-party servers.
 
-**Contact:** barakah-app@proton.me  
+**Contact:** support@barakahtechnologies.net  
 **© 2026 BARAKAH TECHNOLOGIES, INC.**
