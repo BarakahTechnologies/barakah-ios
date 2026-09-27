@@ -61,7 +61,7 @@
     .lang-menu a:hover { background: var(--teal-soft); text-decoration: none; }
     .lang-menu a[aria-current="page"] { color: var(--teal-dark); font-weight: 800; background: var(--teal-soft); pointer-events: none; }
 
-    .page-header { background: var(--teal-dark); color: #fff; padding: 48px 24px 40px; text-align: center; }
+    .page-header { background: linear-gradient(135deg, var(--teal-dark), var(--teal-darker)); color: #fff; padding: 48px 24px 40px; text-align: center; }
     .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
     .page-header p { font-size: 16px; opacity: 0.88; }
 
@@ -74,6 +74,12 @@
     .contact-card a:hover { background: rgba(255,255,255,0.9); }
 
     h2.section-title { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+
+    .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 32px; }
+    .toc-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; }
+    .toc a { color: var(--teal-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
     .faq-group { margin-bottom: 40px; }
     .faq-group h3 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-dark); margin-bottom: 12px; }
@@ -109,6 +115,7 @@
       .wrap { width: min(100% - 28px, 1120px); }
       .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { gap: 16px; flex-wrap: wrap; }
+      .toc ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -154,10 +161,10 @@
     </div>
   </div>
 
-  <h2 class="section-title">Foire aux questions</h2>
+  <h2 class="section-title">Foire aux questions</h2><nav class="toc" aria-label="Sur cette page"><p class="toc-label">Sur cette page</p><ul><li><a href="#faq-group-0">Premiers pas</a></li><li><a href="#faq-group-1">iCloud et synchronisation</a></li><li><a href="#faq-group-2">Partage familial et proches aidants</a></li><li><a href="#faq-group-3">Suivi des tétées</a></li><li><a href="#faq-group-4">Courbes de croissance</a></li><li><a href="#faq-group-5">Barakah Premium</a></li><li><a href="#faq-group-6">Confidentialité et données</a></li></ul></nav>
 
   <!-- Getting Started -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-0">
     <h3>Premiers pas</h3>
 
     <details>
@@ -183,7 +190,7 @@
   </div>
 
   <!-- iCloud & Sync -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-1">
     <h3>iCloud et synchronisation</h3>
 
     <details>
@@ -217,7 +224,7 @@
   </div>
 
   <!-- Family Sharing -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-2">
     <h3>Partage familial et proches aidants</h3>
 
     <details>
@@ -249,7 +256,7 @@
   </div>
 
   <!-- Feeding -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-3">
     <h3>Suivi des tétées</h3>
 
     <details>
@@ -268,7 +275,7 @@
   </div>
 
   <!-- Growth Charts -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-4">
     <h3>Courbes de croissance</h3>
 
     <details>
@@ -299,7 +306,7 @@
   </div>
 
   <!-- Premium -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-5">
     <h3>Barakah Premium</h3>
 
     <details>
@@ -334,7 +341,7 @@
   </div>
 
   <!-- Privacy & Data -->
-  <div class="faq-group">
+  <div class="faq-group" id="faq-group-6">
     <h3>Confidentialité et données</h3>
 
     <details>

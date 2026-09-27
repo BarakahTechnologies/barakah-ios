@@ -12,6 +12,7 @@ Run from anywhere: `python3 build/generate.py`. Writes index.html, index.ar.html
 support.tr.html into the repo root (15 files), overwriting what's there.
 """
 import os
+import re
 
 BUILD_DIR = os.path.dirname(os.path.abspath(__file__))
 SITE_DIR = os.path.dirname(BUILD_DIR)
@@ -33,7 +34,7 @@ UI = {
         nav_features="Features", nav_privacy="Privacy", nav_support="Support", nav_policy="Policy",
         lang_switch_aria="Change language",
         footer_privacy="Privacy Policy", footer_support="Support", footer_contact="Contact",
-        copyright_suffix="All rights reserved.",
+        copyright_suffix="All rights reserved.", toc_label="On this page",
     ),
     "ar": dict(
         native="العربية", dir="rtl",
@@ -42,7 +43,7 @@ UI = {
         nav_features="المزايا", nav_privacy="الخصوصية", nav_support="الدعم", nav_policy="السياسة",
         lang_switch_aria="تغيير اللغة",
         footer_privacy="سياسة الخصوصية", footer_support="الدعم", footer_contact="تواصل معنا",
-        copyright_suffix="جميع الحقوق محفوظة.",
+        copyright_suffix="جميع الحقوق محفوظة.", toc_label="في هذه الصفحة",
     ),
     "es": dict(
         native="Español", dir="ltr",
@@ -51,7 +52,7 @@ UI = {
         nav_features="Funciones", nav_privacy="Privacidad", nav_support="Soporte", nav_policy="Política",
         lang_switch_aria="Cambiar idioma",
         footer_privacy="Política de privacidad", footer_support="Soporte", footer_contact="Contacto",
-        copyright_suffix="Todos los derechos reservados.",
+        copyright_suffix="Todos los derechos reservados.", toc_label="En esta página",
     ),
     "fr": dict(
         native="Français", dir="ltr",
@@ -60,7 +61,7 @@ UI = {
         nav_features="Fonctionnalités", nav_privacy="Confidentialité", nav_support="Assistance", nav_policy="Politique",
         lang_switch_aria="Changer de langue",
         footer_privacy="Politique de confidentialité", footer_support="Assistance", footer_contact="Contact",
-        copyright_suffix="Tous droits réservés.",
+        copyright_suffix="Tous droits réservés.", toc_label="Sur cette page",
     ),
     "tr": dict(
         native="Türkçe", dir="ltr",
@@ -69,7 +70,7 @@ UI = {
         nav_features="Özellikler", nav_privacy="Gizlilik", nav_support="Destek", nav_policy="Politika",
         lang_switch_aria="Dili değiştir",
         footer_privacy="Gizlilik Politikası", footer_support="Destek", footer_contact="İletişim",
-        copyright_suffix="Tüm hakları saklıdır.",
+        copyright_suffix="Tüm hakları saklıdır.", toc_label="Bu sayfada",
     ),
 }
 
@@ -189,6 +190,44 @@ def render_index(lang):
 
 
 # ========================================================================== privacy / support
+def add_toc(page, content, toc_label):
+    """Both privacy.html (15 numbered sections) and support.html (an 8-group, 21-question
+    FAQ) were long enough to need in-page jump navigation - neither had any. Ids/anchors are
+    generated structurally (numbered <h2>s for privacy, .faq-group index for support) so this
+    works unchanged for every language's translated content."""
+    if page == "privacy":
+        matches = re.findall(r'<h2>(\d+)\.\s*([^<]+)</h2>', content)
+        if not matches:
+            return content
+        content = re.sub(
+            r'<h2>(\d+)\.\s*([^<]+)</h2>',
+            lambda m: f'<h2 id="s{m.group(1)}">{m.group(1)}. {m.group(2)}</h2>',
+            content,
+        )
+        items = "".join(f'<li><a href="#s{num}">{num}. {title}</a></li>' for num, title in matches)
+        toc = f'<nav class="toc" aria-label="{toc_label}"><p class="toc-label">{toc_label}</p><ul>{items}</ul></nav>'
+        return re.sub(r'(<h2 id="s1">)', toc + r'\1', content, count=1)
+
+    if page == "support":
+        matches = re.findall(r'<div class="faq-group">\s*<h3>([^<]+)</h3>', content)
+        if not matches:
+            return content
+        ids = [f"faq-group-{i}" for i in range(len(matches))]
+        counter = {"i": 0}
+
+        def add_id(m):
+            i = counter["i"]
+            counter["i"] += 1
+            return f'<div class="faq-group" id="{ids[i]}">\n    <h3>{matches[i]}</h3>'
+
+        content = re.sub(r'<div class="faq-group">\s*<h3>([^<]+)</h3>', add_id, content)
+        items = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in zip(ids, matches))
+        toc = f'<nav class="toc" aria-label="{toc_label}"><p class="toc-label">{toc_label}</p><ul>{items}</ul></nav>'
+        return re.sub(r'(<h2 class="section-title">[^<]*</h2>)', r'\1' + toc, content, count=1)
+
+    return content
+
+
 def render_inner_page(page, lang):
     """privacy.html and support.html share the same pretty-printed nav/footer shape,
     distinct from index.html's minified nav/footer - preserved as originally authored."""
@@ -199,6 +238,7 @@ def render_inner_page(page, lang):
     support_current = ' aria-current="page"' if page == "support" else ""
     policy_current = ' aria-current="page"' if page == "privacy" else ""
     content = read(os.path.join(CONTENT_DIR, f"{page}.{lang}.html"))
+    content = add_toc(page, content, u["toc_label"])
     css = read(os.path.join(CSS_DIR, f"{page}.css"))
     return f"""<!DOCTYPE html>
 <html {html_attrs}>

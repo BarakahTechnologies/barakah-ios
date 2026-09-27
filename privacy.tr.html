@@ -61,16 +61,21 @@
     .lang-menu a:hover { background: var(--teal-soft); text-decoration: none; }
     .lang-menu a[aria-current="page"] { color: var(--teal-dark); font-weight: 800; background: var(--teal-soft); pointer-events: none; }
 
-    .page-header { background: var(--teal-dark); color: #fff; padding: 48px 24px 40px; text-align: center; }
+    .page-header { background: linear-gradient(135deg, var(--teal-dark), var(--teal-darker)); color: #fff; padding: 48px 24px 40px; text-align: center; }
     .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
     .page-header p { font-size: 16px; opacity: 0.88; }
 
     .content { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    .tl-dr { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
-    .tl-dr h2 { font-size: 16px; font-weight: 700; color: #15803d; margin-bottom: 10px; }
+    .tl-dr { background: var(--teal-soft); border: 1px solid var(--teal); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .tl-dr h2 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
     .tl-dr ul { padding-inline-start: 20px; }
-    .tl-dr li { font-size: 15px; color: #166534; line-height: 1.7; }
+    .tl-dr li { font-size: 15px; color: var(--text); line-height: 1.7; }
+    .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; }
+    .toc a { color: var(--teal-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
     h2 { font-size: 20px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
     h2:first-of-type { margin-top: 0; }
@@ -93,6 +98,7 @@
       .wrap { width: min(100% - 28px, 1120px); }
       .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { gap: 16px; flex-wrap: wrap; }
+      .toc ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,10 +150,10 @@
     </ul>
   </div>
 
-  <h2>1. Biz kimiz</h2>
+  <nav class="toc" aria-label="Bu sayfada"><p class="toc-label">Bu sayfada</p><ul><li><a href="#s1">1. Biz kimiz</a></li><li><a href="#s2">2. Uygulamanın topladığı veriler</a></li><li><a href="#s3">3. Veriler nerede saklanır</a></li><li><a href="#s4">4. iCloud senkronizasyonu ve Aile Paylaşımı</a></li><li><a href="#s5">5. Cihaz tanımlayıcıları</a></li><li><a href="#s6">6. Yerel bildirimler</a></li><li><a href="#s7">7. Ana Ekran Widget'ı</a></li><li><a href="#s8">8. Siri ve Uygulama Amaçları</a></li><li><a href="#s9">9. Üçüncü taraf takip veya reklam yok</a></li><li><a href="#s10">10. Uygulama içi satın almalar</a></li><li><a href="#s11">11. Çocukların gizliliği</a></li><li><a href="#s12">12. Veri silme</a></li><li><a href="#s13">13. Güvenlik</a></li><li><a href="#s14">14. Bu politikadaki değişiklikler</a></li><li><a href="#s15">15. İletişim</a></li></ul></nav><h2 id="s1">1. Biz kimiz</h2>
   <p>Barakah ("uygulama"), BARAKAH TECHNOLOGIES, INC. tarafından geliştirilmekte ve yayınlanmaktadır. Bu politikayla ilgili sorularınız için bizimle <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a> adresinden iletişime geçebilirsiniz.</p>
 
-  <h2>2. Uygulamanın topladığı veriler</h2>
+  <h2 id="s2">2. Uygulamanın topladığı veriler</h2>
   <p>Barakah, çocuklarınız ve aileniz hakkında girdiğiniz verileri saklar. Bunlar şunları içerebilir:</p>
   <ul>
     <li><strong>Çocuk bilgileri:</strong> ad, doğum tarihi, cinsiyet, fotoğraf (isteğe bağlı)</li>
@@ -157,37 +163,37 @@
   </ul>
   <p>Bu veriler sizin tarafınızdan girilir ve tamamen sizin kontrolünüzde kalır.</p>
 
-  <h2>3. Veriler nerede saklanır</h2>
+  <h2 id="s3">3. Veriler nerede saklanır</h2>
   <p>Tüm veriler, Apple'ın Core Data çerçevesi kullanılarak cihazınızda yerel olarak saklanır ve Apple CloudKit aracılığıyla kişisel özel iCloud veritabanınıza senkronize edilir; böylece hem kendi cihazlarınızda hem de davet ettiğiniz kişilerle erişilebilir olur. iCloud verilerinize erişimimiz yoktur — Apple'ın gizlilik altyapısı, verilerinizi yalnızca sizin, kendi cihazlarınızın ve davet ettiğiniz aile üyelerinin okuyabilmesini sağlar.</p>
   <p>Herhangi bir uygulama sunucusu, bulut veritabanı veya arka uç API işletmiyoruz.</p>
 
-  <h2>4. iCloud senkronizasyonu ve Aile Paylaşımı</h2>
+  <h2 id="s4">4. iCloud senkronizasyonu ve Aile Paylaşımı</h2>
   <p>iCloud senkronizasyonu etkinleştirildiğinde, Barakah verilerinizi kişisel cihazlarınız arasında senkronize etmek için Apple CloudKit'i kullanır. Uygulama içi "Üye Davet Et" özelliğini kullanarak aile üyeleri veya bakıcılar davet ederseniz, bir CKShare bağlantısı oluşturulur. Bu bağlantıya ve bir iCloud hesabına sahip herkes aile grubunuza katılabilir ve kendisine atadığınız role (ebeveyn, bakıcı, görüntüleyici vb.) göre verileri görüntüleyebilir veya düzenleyebilir.</p>
   <p>Senkronizasyon tamamen Apple'ın altyapısı üzerinden gerçekleşir. BARAKAH TECHNOLOGIES, INC. senkronize edilen hiçbir veriyi almaz, işlemez veya saklamaz.</p>
 
-  <h2>5. Cihaz tanımlayıcıları</h2>
+  <h2 id="s5">5. Cihaz tanımlayıcıları</h2>
   <p>Barakah, Apple'ın <code>UIDevice.identifierForVendor</code> değerini kullanarak bir cihaz tanımlayıcısı oluşturur ve cihazı bir Aile Üyesi kaydıyla ilişkilendirmek için ortaya çıkan değeri sistem Anahtarlığı'nda (Keychain) saklar. Uygulama silinip yeniden yüklendikten sonra satıcı tanımlayıcısının aynı kalacağı garanti edilmez; Anahtarlık'ta daha önce saklanan bir değer yeniden yükleme sonrasında kullanılabilir durumda kalabilir. Yalnızca kendi aile grubunuz içindeki cihazları ayırt etmek için kullanılır ve BARAKAH TECHNOLOGIES, INC. tarafından işletilen herhangi bir sunucuya asla iletilmez.</p>
 
-  <h2>6. Yerel bildirimler</h2>
+  <h2 id="s6">6. Yerel bildirimler</h2>
   <p>Hatırlatıcıları etkinleştirirseniz, Barakah Apple'ın UserNotifications çerçevesi aracılığıyla yerel bildirimler planlar. Hiçbir bildirim verisi cihazınızın dışına iletilmez.</p>
 
-  <h2>7. Ana Ekran Widget'ı</h2>
+  <h2 id="s7">7. Ana Ekran Widget'ı</h2>
   <p>"Son Beslenme" widget'ı, beslenme verilerini paylaşılan bir App Group konteynerinden (yalnızca Barakah uygulaması ve widget uzantısının erişebildiği cihazınızdaki özel bir depolama alanı) okur. Hiçbir veri cihaz dışına gönderilmez.</p>
 
-  <h2>8. Siri ve Uygulama Amaçları</h2>
+  <h2 id="s8">8. Siri ve Uygulama Amaçları</h2>
   <p>Siri kısayollarını kullandığınızda ("Barakah'ta bir beslenme kaydet"), Siri isteği Apple tarafından cihaz üzerinde veya Apple'ın kendi gizlilik politikasına göre Siri altyapısı aracılığıyla işlenir. Barakah'ın Uygulama Amaçları (App Intents) kodu uygulama süreci içinde yerel olarak çalışır ve doğrudan yerel veri deposuna yazar. Ses verilerini almıyor veya işlemiyoruz.</p>
 
-  <h2>9. Üçüncü taraf takip veya reklam yok</h2>
+  <h2 id="s9">9. Üçüncü taraf takip veya reklam yok</h2>
   <p>Barakah herhangi bir reklam SDK'sı, analiz SDK'sı veya üçüncü taraf takip kitaplığı içermez. Hiçbir türde reklam bulunmaz.</p>
   <p>Bize ulaşabilecek tek tanılama verileri, Apple'ın isteğe bağlı Uygulama Analitiği ve çökme raporlarıdır. Apple bunları bize yalnızca iOS Ayarlar &rarr; Gizlilik ve Güvenlik &rarr; Analiz ve İyileştirmeler bölümünde "Uygulama Geliştiricileriyle Paylaş" seçeneğini açtıysanız sağlar. Bu bilgiler Apple tarafından toplulaştırılır ve anonimleştirilir, girdiğiniz herhangi bir kişisel veya sağlık verisi içermez ve sizi, cihazlarınızı veya ailenizi tanımlamak için kullanılamaz.</p>
 
-  <h2>10. Uygulama içi satın almalar</h2>
+  <h2 id="s10">10. Uygulama içi satın almalar</h2>
   <p>Barakah Premium abonelikleri tamamen Apple'ın App Store'u tarafından işlenir. BARAKAH TECHNOLOGIES, INC. ödeme bilgilerini toplamaz veya saklamaz. Apple, satın almayla ilgili verileri kendi gizlilik politikasına göre işleyebilir.</p>
 
-  <h2>11. Çocukların gizliliği</h2>
+  <h2 id="s11">11. Çocukların gizliliği</h2>
   <p>Barakah, ebeveynler ve bakıcılar için tasarlanmış bir araçtır. Çocuklardan doğrudan veri toplamaz — tüm veriler yetişkin kullanıcı tarafından girilir. Uygulama, çocukları herhangi bir çevrimiçi hizmete bağlamaz ve çocuklarla ilgili hiçbir veriyi BARAKAH TECHNOLOGIES, INC.'a veya herhangi bir üçüncü tarafa iletmez.</p>
 
-  <h2>12. Veri silme</h2>
+  <h2 id="s12">12. Veri silme</h2>
   <p>Tüm verilerinizi silmek için:</p>
   <ul>
     <li><strong>Aile sahibiyseniz:</strong> Uygulamanın Ayarlar bölümünde, bu cihazın kopyasını temizlerken verilerinizi iCloud'da tutmak için <strong>Bu Cihazdan Kaldır</strong> seçeneğini veya her aile üyesi için her şeyi kalıcı olarak silmek için <strong>Aileyi ve iCloud Verilerini Sil</strong> seçeneğini kullanın.</li>
@@ -197,13 +203,13 @@
   </ul>
   <p>Uygulamayı silmek yerel verilerini kaldırır ancak daha önce iCloud ile eşzamanlanmış verileri mutlaka silmez. Eşzamanlanmış verileri tüm cihazlardan kaldırmak için yukarıdaki iCloud silme seçeneklerinden birini kullanın.</p>
 
-  <h2>13. Güvenlik</h2>
+  <h2 id="s13">13. Güvenlik</h2>
   <p>Barakah, yetkisiz erişimi önlemek için Face ID, Touch ID ve cihaz parola kimlik doğrulamasını destekler. Uygulama kilidi, uygulama arka plandan her açıldığında uygulanır. Cihaz tanımlayıcısı, Anahtarlık'ta <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> koruması ile saklanır; böylece yalnızca bu cihazda kalır, şifreli yedeklere dahil edilmez veya başka bir cihaza aktarılmaz.</p>
 
-  <h2>14. Bu politikadaki değişiklikler</h2>
+  <h2 id="s14">14. Bu politikadaki değişiklikler</h2>
   <p>Bu politikada önemli değişiklikler yaparsak, bu sayfanın üstündeki tarihi güncelleyeceğiz. Güncel politika her zaman bu adreste bulunur. Değişikliklerden sonra uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
 
-  <h2>15. İletişim</h2>
+  <h2 id="s15">15. İletişim</h2>
   <p>Gizlilikle ilgili sorularınız veya endişeleriniz mi var? Bize <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a> adresinden e-posta gönderin.</p>
 </div>
 

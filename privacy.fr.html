@@ -61,16 +61,21 @@
     .lang-menu a:hover { background: var(--teal-soft); text-decoration: none; }
     .lang-menu a[aria-current="page"] { color: var(--teal-dark); font-weight: 800; background: var(--teal-soft); pointer-events: none; }
 
-    .page-header { background: var(--teal-dark); color: #fff; padding: 48px 24px 40px; text-align: center; }
+    .page-header { background: linear-gradient(135deg, var(--teal-dark), var(--teal-darker)); color: #fff; padding: 48px 24px 40px; text-align: center; }
     .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
     .page-header p { font-size: 16px; opacity: 0.88; }
 
     .content { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    .tl-dr { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
-    .tl-dr h2 { font-size: 16px; font-weight: 700; color: #15803d; margin-bottom: 10px; }
+    .tl-dr { background: var(--teal-soft); border: 1px solid var(--teal); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .tl-dr h2 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
     .tl-dr ul { padding-inline-start: 20px; }
-    .tl-dr li { font-size: 15px; color: #166534; line-height: 1.7; }
+    .tl-dr li { font-size: 15px; color: var(--text); line-height: 1.7; }
+    .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; }
+    .toc a { color: var(--teal-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
     h2 { font-size: 20px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
     h2:first-of-type { margin-top: 0; }
@@ -93,6 +98,7 @@
       .wrap { width: min(100% - 28px, 1120px); }
       .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { gap: 16px; flex-wrap: wrap; }
+      .toc ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,10 +150,10 @@
     </ul>
   </div>
 
-  <h2>1. Qui nous sommes</h2>
+  <nav class="toc" aria-label="Sur cette page"><p class="toc-label">Sur cette page</p><ul><li><a href="#s1">1. Qui nous sommes</a></li><li><a href="#s2">2. Quelles données l'application collecte</a></li><li><a href="#s3">3. Où les données sont stockées</a></li><li><a href="#s4">4. Synchronisation iCloud et partage familial</a></li><li><a href="#s5">5. Identifiants de l'appareil</a></li><li><a href="#s6">6. Notifications locales</a></li><li><a href="#s7">7. Widget de l'écran d'accueil</a></li><li><a href="#s8">8. Siri et App Intents</a></li><li><a href="#s9">9. Aucun suivi ni publicité tiers</a></li><li><a href="#s10">10. Achats intégrés</a></li><li><a href="#s11">11. Confidentialité des enfants</a></li><li><a href="#s12">12. Suppression des données</a></li><li><a href="#s13">13. Sécurité</a></li><li><a href="#s14">14. Modifications de cette politique</a></li><li><a href="#s15">15. Contact</a></li></ul></nav><h2 id="s1">1. Qui nous sommes</h2>
   <p>Barakah (« l'application ») est développée et publiée par BARAKAH TECHNOLOGIES, INC. Pour toute question concernant cette politique, contactez-nous à l'adresse <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a>.</p>
 
-  <h2>2. Quelles données l'application collecte</h2>
+  <h2 id="s2">2. Quelles données l'application collecte</h2>
   <p>Barakah stocke les données que vous saisissez concernant vos enfants et votre famille. Cela peut inclure :</p>
   <ul>
     <li><strong>Informations sur l'enfant :</strong> nom, date de naissance, sexe, photo (facultatif)</li>
@@ -157,37 +163,37 @@
   </ul>
   <p>Ces données sont saisies par vous et restent entièrement sous votre contrôle.</p>
 
-  <h2>3. Où les données sont stockées</h2>
+  <h2 id="s3">3. Où les données sont stockées</h2>
   <p>Toutes les données sont stockées localement sur votre appareil grâce au framework Core Data d'Apple, puis synchronisées avec votre base de données iCloud privée personnelle via Apple CloudKit, afin d'être accessibles sur tous vos appareils et par toute personne que vous invitez dans votre famille. Nous n'avons aucun accès à vos données iCloud — l'infrastructure de confidentialité d'Apple garantit que seuls vous, vos propres appareils et les membres de la famille que vous avez invités peuvent les lire.</p>
   <p>Nous n'exploitons aucun serveur d'application, aucune base de données cloud ni aucune API backend.</p>
 
-  <h2>4. Synchronisation iCloud et partage familial</h2>
+  <h2 id="s4">4. Synchronisation iCloud et partage familial</h2>
   <p>Lorsque la synchronisation iCloud est activée, Barakah utilise Apple CloudKit pour synchroniser vos données sur l'ensemble de vos appareils personnels. Si vous invitez des membres de la famille ou des proches aidants via la fonctionnalité « Inviter un membre » de l'application, un lien CKShare est généré. Toute personne disposant de ce lien et d'un compte iCloud peut rejoindre votre groupe familial et consulter ou modifier les données selon le rôle que vous lui attribuez (parent, proche aidant, observateur, etc.).</p>
   <p>La synchronisation s'effectue entièrement via l'infrastructure d'Apple. BARAKAH TECHNOLOGIES, INC. ne reçoit, ne traite ni ne stocke aucune donnée synchronisée.</p>
 
-  <h2>5. Identifiants de l'appareil</h2>
+  <h2 id="s5">5. Identifiants de l'appareil</h2>
   <p>Barakah crée un identifiant d'appareil à l'aide de <code>UIDevice.identifierForVendor</code> d'Apple et stocke la valeur obtenue dans le trousseau (Keychain) du système afin d'associer un appareil à une fiche de membre de la famille. Il n'est pas garanti que l'identifiant du fournisseur reste identique après la suppression et la réinstallation de l'application ; une valeur déjà enregistrée dans le trousseau peut rester disponible après une réinstallation. Il sert uniquement à distinguer les appareils au sein de votre propre groupe familial et n'est jamais transmis à un serveur exploité par BARAKAH TECHNOLOGIES, INC.</p>
 
-  <h2>6. Notifications locales</h2>
+  <h2 id="s6">6. Notifications locales</h2>
   <p>Si vous activez les rappels, Barakah planifie des notifications locales via le framework UserNotifications d'Apple. Aucune donnée de notification n'est transmise hors de votre appareil.</p>
 
-  <h2>7. Widget de l'écran d'accueil</h2>
+  <h2 id="s7">7. Widget de l'écran d'accueil</h2>
   <p>Le widget « Dernière tétée » lit les données d'alimentation à partir d'un conteneur App Group partagé (une zone de stockage privée sur votre appareil, accessible uniquement à l'application Barakah et à son extension de widget). Aucune donnée n'est envoyée en dehors de l'appareil.</p>
 
-  <h2>8. Siri et App Intents</h2>
+  <h2 id="s8">8. Siri et App Intents</h2>
   <p>Lorsque vous utilisez les raccourcis Siri (« Enregistrer une tétée dans Barakah »), la demande Siri est traitée par Apple directement sur l'appareil ou via l'infrastructure Siri d'Apple, conformément à la politique de confidentialité propre à Apple. Le code App Intents de Barakah s'exécute localement au sein du processus de l'application et écrit directement dans la base de données locale. Nous ne recevons ni ne traitons aucune donnée vocale.</p>
 
-  <h2>9. Aucun suivi ni publicité tiers</h2>
+  <h2 id="s9">9. Aucun suivi ni publicité tiers</h2>
   <p>Barakah n'intègre aucun SDK publicitaire, aucun SDK d'analyse ni aucune bibliothèque de suivi tiers. Il n'y a aucune publicité, quelle qu'elle soit.</p>
   <p>Les seuls diagnostics jamais mis à notre disposition sont les rapports optionnels d'App Analytics et de plantage d'Apple. Apple ne nous les fournit que si vous avez activé « Partager avec les développeurs d'app » dans Réglages iOS &rarr; Confidentialité et sécurité &rarr; Analyse et améliorations. Ces informations sont agrégées et anonymisées par Apple, ne contiennent aucune donnée personnelle ou de santé que vous avez saisie, et ne peuvent pas être utilisées pour vous identifier, ni identifier vos appareils ou votre famille.</p>
 
-  <h2>10. Achats intégrés</h2>
+  <h2 id="s10">10. Achats intégrés</h2>
   <p>Les abonnements Barakah Premium sont entièrement traités par l'App Store d'Apple. BARAKAH TECHNOLOGIES, INC. ne collecte ni ne stocke aucune information de paiement. Apple peut traiter les données liées aux achats conformément à sa propre politique de confidentialité.</p>
 
-  <h2>11. Confidentialité des enfants</h2>
+  <h2 id="s11">11. Confidentialité des enfants</h2>
   <p>Barakah est un outil conçu pour les parents et les proches aidants. Elle ne collecte aucune donnée directement auprès des enfants — toutes les données sont saisies par l'utilisateur adulte. L'application ne connecte les enfants à aucun service en ligne et ne transmet aucune donnée relative aux enfants à BARAKAH TECHNOLOGIES, INC. ni à un tiers quelconque.</p>
 
-  <h2>12. Suppression des données</h2>
+  <h2 id="s12">12. Suppression des données</h2>
   <p>Pour supprimer toutes vos données :</p>
   <ul>
     <li><strong>Si vous êtes le propriétaire de la famille :</strong> Dans les Réglages de l'application, choisissez <strong>Retirer de cet appareil</strong> pour effacer la copie de cet appareil tout en conservant vos données dans iCloud, ou <strong>Supprimer la famille et les données iCloud</strong> pour supprimer définitivement toutes les données de tous les membres de la famille.</li>
@@ -197,13 +203,13 @@
   </ul>
   <p>La suppression de l'application efface ses données locales, mais ne supprime pas nécessairement les données déjà synchronisées avec iCloud. Utilisez l'une des options de suppression iCloud ci-dessus pour effacer les données synchronisées de tous les appareils.</p>
 
-  <h2>13. Sécurité</h2>
+  <h2 id="s13">13. Sécurité</h2>
   <p>Barakah prend en charge l'authentification par Face ID, Touch ID et le code d'accès de l'appareil afin d'empêcher tout accès non autorisé. Le verrouillage de l'application est appliqué chaque fois qu'elle est rouverte depuis l'arrière-plan. L'identifiant de l'appareil est stocké dans le trousseau (Keychain) avec la protection <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>, de sorte qu'il reste uniquement sur cet appareil et n'est jamais inclus dans les sauvegardes chiffrées ni transféré vers un autre appareil.</p>
 
-  <h2>14. Modifications de cette politique</h2>
+  <h2 id="s14">14. Modifications de cette politique</h2>
   <p>Si nous apportons des modifications importantes à cette politique, nous mettrons à jour la date en haut de cette page. La politique actuelle est toujours disponible à cette URL. La poursuite de l'utilisation de l'application après ces modifications vaut acceptation de la politique révisée.</p>
 
-  <h2>15. Contact</h2>
+  <h2 id="s15">15. Contact</h2>
   <p>Des questions ou des préoccupations concernant la confidentialité ? Écrivez-nous à l'adresse <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a>.</p>
 </div>
 

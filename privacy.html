@@ -61,16 +61,21 @@
     .lang-menu a:hover { background: var(--teal-soft); text-decoration: none; }
     .lang-menu a[aria-current="page"] { color: var(--teal-dark); font-weight: 800; background: var(--teal-soft); pointer-events: none; }
 
-    .page-header { background: var(--teal-dark); color: #fff; padding: 48px 24px 40px; text-align: center; }
+    .page-header { background: linear-gradient(135deg, var(--teal-dark), var(--teal-darker)); color: #fff; padding: 48px 24px 40px; text-align: center; }
     .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
     .page-header p { font-size: 16px; opacity: 0.88; }
 
     .content { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    .tl-dr { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
-    .tl-dr h2 { font-size: 16px; font-weight: 700; color: #15803d; margin-bottom: 10px; }
+    .tl-dr { background: var(--teal-soft); border: 1px solid var(--teal); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .tl-dr h2 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
     .tl-dr ul { padding-inline-start: 20px; }
-    .tl-dr li { font-size: 15px; color: #166534; line-height: 1.7; }
+    .tl-dr li { font-size: 15px; color: var(--text); line-height: 1.7; }
+    .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; }
+    .toc a { color: var(--teal-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
     h2 { font-size: 20px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
     h2:first-of-type { margin-top: 0; }
@@ -93,6 +98,7 @@
       .wrap { width: min(100% - 28px, 1120px); }
       .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { gap: 16px; flex-wrap: wrap; }
+      .toc ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,10 +150,10 @@
     </ul>
   </div>
 
-  <h2>1. Who we are</h2>
+  <nav class="toc" aria-label="On this page"><p class="toc-label">On this page</p><ul><li><a href="#s1">1. Who we are</a></li><li><a href="#s2">2. What data the app collects</a></li><li><a href="#s3">3. Where data is stored</a></li><li><a href="#s4">4. iCloud sync and Family Sharing</a></li><li><a href="#s5">5. Device identifiers</a></li><li><a href="#s6">6. Local notifications</a></li><li><a href="#s7">7. Home Screen Widget</a></li><li><a href="#s8">8. Siri and App Intents</a></li><li><a href="#s9">9. No third-party tracking or advertising</a></li><li><a href="#s10">10. In-app purchases</a></li><li><a href="#s11">11. Children's privacy</a></li><li><a href="#s12">12. Data deletion</a></li><li><a href="#s13">13. Security</a></li><li><a href="#s14">14. Changes to this policy</a></li><li><a href="#s15">15. Contact</a></li></ul></nav><h2 id="s1">1. Who we are</h2>
   <p>Barakah ("the app") is developed and published by BARAKAH TECHNOLOGIES, INC. For questions about this policy, contact us at <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a>.</p>
 
-  <h2>2. What data the app collects</h2>
+  <h2 id="s2">2. What data the app collects</h2>
   <p>Barakah stores data you enter about your children and family. This may include:</p>
   <ul>
     <li><strong>Child information:</strong> name, date of birth, gender, photo (optional)</li>
@@ -157,37 +163,37 @@
   </ul>
   <p>This data is entered by you and remains entirely under your control.</p>
 
-  <h2>3. Where data is stored</h2>
+  <h2 id="s3">3. Where data is stored</h2>
   <p>All data is stored locally on your device using Apple's Core Data framework, and synced to your personal iCloud private database via Apple CloudKit so it's available across your own devices and with anyone you invite to your family. We have no access to your iCloud data — Apple's privacy infrastructure ensures only you, your own devices, and any family member you've invited can read it.</p>
   <p>We do not operate any application server, cloud database, or backend API.</p>
 
-  <h2>4. iCloud sync and Family Sharing</h2>
+  <h2 id="s4">4. iCloud sync and Family Sharing</h2>
   <p>When iCloud sync is enabled, Barakah uses Apple CloudKit to synchronize your data across your personal devices. If you invite family members or caregivers using the in-app "Invite Member" feature, a CKShare link is generated. Anyone with that link and an iCloud account can join your family group and see or edit data according to the role you assign them (parent, caregiver, viewer, etc.).</p>
   <p>The sync happens entirely through Apple's infrastructure. BARAKAH TECHNOLOGIES, INC. does not receive, process, or store any synced data.</p>
 
-  <h2>5. Device identifiers</h2>
+  <h2 id="s5">5. Device identifiers</h2>
   <p>Barakah creates a device identifier using Apple's <code>UIDevice.identifierForVendor</code> and stores the resulting value in the system Keychain to associate a device with a Family Member record. The vendor identifier itself is not guaranteed to remain the same after the app is removed and reinstalled; a value already stored in Keychain may remain available across a reinstall. It is used only to distinguish devices within your own family group and is never transmitted to any server operated by BARAKAH TECHNOLOGIES, INC.</p>
 
-  <h2>6. Local notifications</h2>
+  <h2 id="s6">6. Local notifications</h2>
   <p>If you enable reminders, Barakah schedules local notifications through Apple's UserNotifications framework. No notification data is transmitted off your device.</p>
 
-  <h2>7. Home Screen Widget</h2>
+  <h2 id="s7">7. Home Screen Widget</h2>
   <p>The "Last Fed" widget reads feeding data from a shared App Group container (a private storage area on your device accessible only to the Barakah app and its widget extension). No data is sent outside the device.</p>
 
-  <h2>8. Siri and App Intents</h2>
+  <h2 id="s8">8. Siri and App Intents</h2>
   <p>When you use Siri shortcuts ("Log a feeding in Barakah"), the Siri request is processed by Apple on-device or through Apple's Siri infrastructure according to Apple's own privacy policy. Barakah's App Intents code runs locally inside the app process and writes directly to the local data store. We do not receive or process voice data.</p>
 
-  <h2>9. No third-party tracking or advertising</h2>
+  <h2 id="s9">9. No third-party tracking or advertising</h2>
   <p>Barakah does not include any advertising SDK, analytics SDK, or third-party tracking library. There are no ads of any kind.</p>
   <p>The only diagnostics ever available to us are Apple's optional App Analytics and crash reports. Apple provides these to us only if you have turned on "Share With App Developers" in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements. This information is aggregated and anonymized by Apple, contains no personal or health data you entered, and cannot be used to identify you, your devices, or your family.</p>
 
-  <h2>10. In-app purchases</h2>
+  <h2 id="s10">10. In-app purchases</h2>
   <p>Barakah Premium subscriptions are processed entirely by Apple's App Store. BARAKAH TECHNOLOGIES, INC. does not collect or store payment information. Apple may process purchase-related data per their own privacy policy.</p>
 
-  <h2>11. Children's privacy</h2>
+  <h2 id="s11">11. Children's privacy</h2>
   <p>Barakah is a tool designed for parents and caregivers. It does not collect data from children directly — all data is entered by the adult user. The app does not connect children to any online service and does not transmit any data relating to children to BARAKAH TECHNOLOGIES, INC. or any third party.</p>
 
-  <h2>12. Data deletion</h2>
+  <h2 id="s12">12. Data deletion</h2>
   <p>To delete all your data:</p>
   <ul>
     <li><strong>If you're the family owner:</strong> In the app's Settings, choose <strong>Remove From This Device</strong> to clear this device's copy while keeping your data in iCloud, or <strong>Delete Family &amp; iCloud Data</strong> to permanently delete everything for every family member.</li>
@@ -197,13 +203,13 @@
   </ul>
   <p>Deleting the app removes its local data but does not necessarily delete data already synced to iCloud. Use one of the iCloud deletion options above to remove synced data from all devices.</p>
 
-  <h2>13. Security</h2>
+  <h2 id="s13">13. Security</h2>
   <p>Barakah supports Face ID, Touch ID, and device passcode authentication to prevent unauthorized access. The app lock is enforced every time the app is opened from background. The device identifier is stored in the Keychain with <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> protection, so it stays on this device only and is never included in encrypted backups or transferred to another device.</p>
 
-  <h2>14. Changes to this policy</h2>
+  <h2 id="s14">14. Changes to this policy</h2>
   <p>If we make material changes to this policy, we will update the date at the top of this page. The current policy is always available at this URL. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-  <h2>15. Contact</h2>
+  <h2 id="s15">15. Contact</h2>
   <p>Questions or concerns about privacy? Email us at <a href="mailto:support@barakahtechnologies.net">support@barakahtechnologies.net</a>.</p>
 </div>
 
