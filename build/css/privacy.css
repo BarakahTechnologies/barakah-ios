@@ -1,4 +1,12 @@
     :root {
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --section-space: var(--space-16);
       --teal: #45B8AC;
       --teal-dark: #1c766d;
       --teal-darker: #134f48;
@@ -24,7 +32,7 @@
        (--ink/--line); the two pages define different sets, per CLAUDE.md. */
     .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
     .nav { position: sticky; top: 0; z-index: 50; background: rgba(253, 248, 242, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(231, 236, 235, 0.8); }
-    .nav-inner { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-inner { min-height: 68px; padding-block: 10px; gap: var(--space-6); display: flex; align-items: center; justify-content: space-between; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
     .brand-mark { width: 38px; height: 38px; border-radius: 11px; object-fit: cover; box-shadow: 0 8px 20px rgba(69, 184, 172, 0.3); }
     .nav-links { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 650; color: var(--muted); }
@@ -47,7 +55,7 @@
     .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
     .page-header p { font-size: 16px; opacity: 0.88; }
 
-    .content { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .content { overflow-wrap: anywhere; max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
     .tl-dr { background: var(--teal-soft); border: 1px solid var(--teal); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
     .tl-dr h2 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
@@ -71,14 +79,22 @@
     footer { background: #1a1a1a; color: rgba(255,255,255,0.6); text-align: center; padding: 32px 24px; font-size: 14px; }
     footer a { color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px; }
     footer a:hover { color: var(--teal); }
-    footer .copyright { margin-top: 12px; font-size: 13px; opacity: 0.5; }
+    footer .copyright { margin-top: 12px; font-size: 13px; }
 
     /* The sub-pages previously had no @media rules at all — this breakpoint is what stops the nav
        collapsing in on itself on a phone. flex-wrap on .nav-links additionally keeps the longer
        translated labels (fr/es/tr) from overflowing horizontally. */
+    @media (max-width: 900px) {
+      .nav-links { flex-wrap: wrap; gap: var(--space-3) var(--space-4); }
+    }
+
     @media (max-width: 640px) {
       .wrap { width: min(100% - 28px, 1120px); }
-      .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
+      .content { padding: var(--space-8) var(--space-4) var(--space-12); }
+      .page-header { padding: var(--space-8) var(--space-4); }
+      .nav-inner { position: relative; height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { gap: 16px; flex-wrap: wrap; }
       .toc ul { grid-template-columns: 1fr; }
+      .lang-switch { position: static; margin-inline-start: 0; padding-inline-start: 0; border-inline-start: 0; }
+      .lang-menu { inset-inline: 0; top: calc(100% + 8px); min-width: 0; }
     }
