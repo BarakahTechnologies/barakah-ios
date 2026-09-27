@@ -141,7 +141,7 @@ def render_index(lang):
     nav = (
         f'<div class="wrap nav-inner">'
         f'<a class="brand" href="{fname("index", lang)}" aria-label="{u["brand_aria"]}"> '
-        f'<img class="brand-mark" src="images/icon.png" alt="{u["brand_icon_alt"]}" width="38" height="38"> '
+        f'<img class="brand-mark" src="images/icon-96.png" alt="{u["brand_icon_alt"]}" width="38" height="38"> '
         f'<span>{BRAND}</span> </a>'
         f'<nav class="nav-links" aria-label="{u["nav_aria"]}">'
         f'<a href="#features">{u["nav_features"]}</a> '
@@ -163,8 +163,8 @@ def render_index(lang):
 
   <title>{title}</title>
 
-  <link rel="icon" type="image/png" href="images/icon.png" />
-  <link rel="apple-touch-icon" href="images/icon.png" />
+  <link rel="icon" type="image/png" href="images/icon-32.png" />
+  <link rel="apple-touch-icon" href="images/icon-180.png" />
   <link rel="canonical" href="{BASE}/{fname("index", lang)}" />
 
 {hreflang_block("index")}
@@ -207,8 +207,8 @@ def render_inner_page(page, lang):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content="{desc}">
-  <link rel="icon" type="image/png" href="images/icon.png">
-  <link rel="apple-touch-icon" href="images/icon.png">
+  <link rel="icon" type="image/png" href="images/icon-32.png">
+  <link rel="apple-touch-icon" href="images/icon-180.png">
   <link rel="canonical" href="{BASE}/{fname(page, lang)}">
 
 {hreflang_block(page)}
@@ -221,7 +221,7 @@ def render_inner_page(page, lang):
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="{fname("index", lang)}" aria-label="{u["brand_aria"]}">
-      <img class="brand-mark" src="images/icon.png" alt="{u["brand_icon_alt"]}" width="38" height="38">
+      <img class="brand-mark" src="images/icon-96.png" alt="{u["brand_icon_alt"]}" width="38" height="38">
       <span>{BRAND}</span>
     </a>
     <nav class="nav-links" aria-label="{u["nav_aria"]}">

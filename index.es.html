@@ -8,8 +8,8 @@
 
   <title>Barakah — Seguimiento privado del bebé</title>
 
-  <link rel="icon" type="image/png" href="images/icon.png" />
-  <link rel="apple-touch-icon" href="images/icon.png" />
+  <link rel="icon" type="image/png" href="images/icon-32.png" />
+  <link rel="apple-touch-icon" href="images/icon-180.png" />
   <link rel="canonical" href="https://barakah.barakahtechnologies.net/index.es.html" />
 
   <link rel="alternate" hreflang="en" href="https://barakah.barakahtechnologies.net/index.html" />
@@ -22,7 +22,7 @@
   <style>
     :root {
       --teal: #45B8AC;
-      --teal-dark: #2f9b91;
+      --teal-dark: #1c766d;
       --teal-soft: #e8f8f6;
       --cream: #fdf8f2;
       --ink: #15201f;
@@ -41,6 +41,17 @@
 
     html {
       scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+
+    a:focus-visible, .button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--teal-dark);
+      outline-offset: 3px;
+      border-radius: 6px;
     }
 
     body {
@@ -637,7 +648,7 @@
 </head>
 <body>
 <header class="nav">
-<div class="wrap nav-inner"><a class="brand" href="index.es.html" aria-label="Barakah — inicio"> <img class="brand-mark" src="images/icon.png" alt="Icono de la app Barakah" width="38" height="38"> <span>Barakah</span> </a><nav class="nav-links" aria-label="Navegación principal"><a href="#features">Funciones</a> <a href="#privacy">Privacidad</a> <a href="support.es.html">Soporte</a> <a href="privacy.es.html">Política</a> <details class="lang-switch"><summary aria-label="Cambiar idioma">🌐 Español</summary><div class="lang-menu"><a href="index.html" lang="en">English</a><a href="index.ar.html" lang="ar">العربية</a><a href="index.es.html" lang="es" aria-current="page">Español</a><a href="index.fr.html" lang="fr">Français</a><a href="index.tr.html" lang="tr">Türkçe</a></div></details></nav></div>
+<div class="wrap nav-inner"><a class="brand" href="index.es.html" aria-label="Barakah — inicio"> <img class="brand-mark" src="images/icon-96.png" alt="Icono de la app Barakah" width="38" height="38"> <span>Barakah</span> </a><nav class="nav-links" aria-label="Navegación principal"><a href="#features">Funciones</a> <a href="#privacy">Privacidad</a> <a href="support.es.html">Soporte</a> <a href="privacy.es.html">Política</a> <details class="lang-switch"><summary aria-label="Cambiar idioma">🌐 Español</summary><div class="lang-menu"><a href="index.html" lang="en">English</a><a href="index.ar.html" lang="ar">العربية</a><a href="index.es.html" lang="es" aria-current="page">Español</a><a href="index.fr.html" lang="fr">Français</a><a href="index.tr.html" lang="tr">Türkçe</a></div></details></nav></div>
 </header><main>
 <section class="hero">
 <div class="wrap hero-grid">

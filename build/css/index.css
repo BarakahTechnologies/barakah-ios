@@ -1,6 +1,6 @@
     :root {
       --teal: #45B8AC;
-      --teal-dark: #2f9b91;
+      --teal-dark: #1c766d;
       --teal-soft: #e8f8f6;
       --cream: #fdf8f2;
       --ink: #15201f;
@@ -19,6 +19,17 @@
 
     html {
       scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+
+    a:focus-visible, .button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--teal-dark);
+      outline-offset: 3px;
+      border-radius: 6px;
     }
 
     body {
