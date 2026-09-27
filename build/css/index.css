@@ -1,6 +1,7 @@
     :root {
       --teal: #45B8AC;
       --teal-dark: #1c766d;
+      --teal-darker: #134f48;
       --teal-soft: #e8f8f6;
       --cream: #fdf8f2;
       --ink: #15201f;
@@ -238,12 +239,12 @@
 
     .button-primary {
       color: white;
-      background: var(--teal);
+      background: var(--teal-dark);
       box-shadow: 0 12px 28px rgba(69, 184, 172, 0.35);
     }
 
     .button-primary:hover {
-      background: var(--teal-dark);
+      background: var(--teal-darker);
     }
 
     .button-secondary {
@@ -349,9 +350,10 @@
       padding: 18px;
     }
 
-    .timeline h3 {
+    .timeline-title {
       font-size: 15px;
-      margin-bottom: 12px;
+      margin: 0 0 12px;
+      font-weight: 700;
     }
 
     .timeline-row {
