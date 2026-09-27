@@ -216,6 +216,21 @@
 
     .hero-grid > * { min-width: 0; }
 
+    .parent-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      width: fit-content;
+      margin-bottom: var(--space-4);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .parent-link::before { content: "←"; }
+    [dir="rtl"] .parent-link::before { content: "→"; }
+    .parent-link:hover { text-decoration: underline; }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -688,6 +703,7 @@
 <section class="hero">
 <div class="wrap hero-grid">
 <div>
+<a class="parent-link" href="https://barakahtechnologies.net/apps.fr.html">Toutes les applications</a>
 <div class="badge">Suivi de bébé privé via iCloud</div>
 <h1>Suivez chaque instant de bébé avec <span>barakah.</span></h1>
 <p class="lead">Tétées, sommeil, couches, température, croissance, étapes clés, médicaments, partage avec les proches aidants et historique prêt à présenter au médecin, réunis dans une seule application familiale privée.</p>
@@ -800,7 +816,7 @@
 </main><footer>
 <div class="wrap footer-inner">
 <p>&copy; 2026 BARAKAH TECHNOLOGIES, INC. Tous droits réservés.</p>
-<div class="footer-links"><a href="privacy.fr.html">Politique de confidentialité</a> <a href="support.fr.html">Assistance</a> <a href="mailto:support@barakahtechnologies.net">Contact</a></div>
+<div class="footer-links"><a href="https://barakahtechnologies.net/index.fr.html">Barakah Technologies</a> <a href="privacy.fr.html">Politique de confidentialité</a> <a href="support.fr.html">Assistance</a> <a href="mailto:support@barakahtechnologies.net">Contact</a></div>
 </div>
 </footer>
 </body>

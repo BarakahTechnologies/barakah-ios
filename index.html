@@ -216,6 +216,21 @@
 
     .hero-grid > * { min-width: 0; }
 
+    .parent-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      width: fit-content;
+      margin-bottom: var(--space-4);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .parent-link::before { content: "←"; }
+    [dir="rtl"] .parent-link::before { content: "→"; }
+    .parent-link:hover { text-decoration: underline; }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -688,6 +703,7 @@
 <section class="hero">
 <div class="wrap hero-grid">
 <div>
+<a class="parent-link" href="https://barakahtechnologies.net/apps.html">All apps</a>
 <div class="badge">Private iCloud baby tracker</div>
 <h1>Track every baby moment with <span>barakah.</span></h1>
 <p class="lead">Feedings, sleep, diapers, temperature, growth, milestones, medications, caregiver sharing, and doctor-ready history in one private family app.</p>
@@ -800,7 +816,7 @@
 </main><footer>
 <div class="wrap footer-inner">
 <p>&copy; 2026 BARAKAH TECHNOLOGIES, INC. All rights reserved.</p>
-<div class="footer-links"><a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a> <a href="mailto:support@barakahtechnologies.net">Contact</a></div>
+<div class="footer-links"><a href="https://barakahtechnologies.net/index.html">Barakah Technologies</a> <a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a> <a href="mailto:support@barakahtechnologies.net">Contact</a></div>
 </div>
 </footer>
 </body>

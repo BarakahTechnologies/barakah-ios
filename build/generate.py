@@ -182,7 +182,7 @@ def render_index(lang):
 </main><footer>
 <div class="wrap footer-inner">
 <p>&copy; 2026 BARAKAH TECHNOLOGIES, INC. {u["copyright_suffix"]}</p>
-<div class="footer-links"><a href="{fname("privacy", lang)}">{u["footer_privacy"]}</a> <a href="{fname("support", lang)}">{u["footer_support"]}</a> <a href="mailto:{CONTACT_EMAIL}">{u["footer_contact"]}</a></div>
+<div class="footer-links"><a href="https://barakahtechnologies.net/{fname("index", lang)}">Barakah Technologies</a> <a href="{fname("privacy", lang)}">{u["footer_privacy"]}</a> <a href="{fname("support", lang)}">{u["footer_support"]}</a> <a href="mailto:{CONTACT_EMAIL}">{u["footer_contact"]}</a></div>
 </div>
 </footer>
 </body>
@@ -282,6 +282,7 @@ def render_inner_page(page, lang):
 
 <footer>
   <div>
+    <a href="https://barakahtechnologies.net/{fname("index", lang)}">Barakah Technologies</a>
     <a href="{fname("privacy", lang)}">{u["footer_privacy"]}</a>
     <a href="{fname("support", lang)}">{u["footer_support"]}</a>
     <a href="mailto:{CONTACT_EMAIL}">{u["footer_contact"]}</a>

@@ -216,6 +216,21 @@
 
     .hero-grid > * { min-width: 0; }
 
+    .parent-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      width: fit-content;
+      margin-bottom: var(--space-4);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .parent-link::before { content: "←"; }
+    [dir="rtl"] .parent-link::before { content: "→"; }
+    .parent-link:hover { text-decoration: underline; }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -688,6 +703,7 @@
 <section class="hero">
 <div class="wrap hero-grid">
 <div>
+<a class="parent-link" href="https://barakahtechnologies.net/apps.ar.html">جميع التطبيقات</a>
 <div class="badge">متعقب أطفال خاص عبر iCloud</div>
 <h1>تتبّع كل لحظة من لحظات طفلك مع <span>Barakah.</span></h1>
 <p class="lead">الرضاعة والنوم والحفاضات ودرجة الحرارة والنمو ومراحل التطور والأدوية ومشاركة مقدمي الرعاية، وسجل جاهز لعرضه على الطبيب — كل ذلك في تطبيق عائلي خاص واحد.</p>
@@ -800,7 +816,7 @@
 </main><footer>
 <div class="wrap footer-inner">
 <p>&copy; 2026 BARAKAH TECHNOLOGIES, INC. جميع الحقوق محفوظة.</p>
-<div class="footer-links"><a href="privacy.ar.html">سياسة الخصوصية</a> <a href="support.ar.html">الدعم</a> <a href="mailto:support@barakahtechnologies.net">تواصل معنا</a></div>
+<div class="footer-links"><a href="https://barakahtechnologies.net/index.ar.html">Barakah Technologies</a> <a href="privacy.ar.html">سياسة الخصوصية</a> <a href="support.ar.html">الدعم</a> <a href="mailto:support@barakahtechnologies.net">تواصل معنا</a></div>
 </div>
 </footer>
 </body>
