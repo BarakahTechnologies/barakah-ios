@@ -110,6 +110,8 @@ PAGE_META = {
 }
 
 
+HOME_LABELS = {'en': 'Home', 'ar': 'الرئيسية', 'es': 'Inicio', 'fr': 'Accueil', 'tr': 'Ana sayfa'}
+
 def fname(page, lang):
     return f"{page}.html" if lang == "en" else f"{page}.{lang}.html"
 
@@ -145,6 +147,7 @@ def render_index(lang):
         f'<img class="brand-mark" src="images/icon-96.png" alt="{u["brand_icon_alt"]}" width="38" height="38"> '
         f'<span>{BRAND}</span> </a>'
         f'<nav class="nav-links" aria-label="{u["nav_aria"]}">'
+        f'<a class="home-button" href="https://barakahtechnologies.net/{fname("index", lang)}" aria-label="Barakah Technologies — {HOME_LABELS[lang]}">{HOME_LABELS[lang]}</a> '
         f'<a href="#features">{u["nav_features"]}</a> '
         f'<a href="#privacy">{u["nav_privacy"]}</a> '
         f'<a href="{fname("support", lang)}">{u["nav_support"]}</a> '
@@ -173,7 +176,8 @@ def render_index(lang):
   <style>
 {css}
   </style>
-  <link rel="stylesheet" href="assets/family.css?v=20260927-refinement" />
+  <link rel="stylesheet" href="assets/family.css?v=20260927-home" />
+  <link rel="stylesheet" href="assets/design-system.css?v=20260927-shared">
 </head>
 <body>
 <header class="nav">
@@ -256,7 +260,8 @@ def render_inner_page(page, lang):
   <style>
 {css}
   </style>
-  <link rel="stylesheet" href="assets/family.css?v=20260927-refinement" />
+  <link rel="stylesheet" href="assets/family.css?v=20260927-home" />
+  <link rel="stylesheet" href="assets/design-system.css?v=20260927-shared">
 </head>
 <body>
 
@@ -267,6 +272,7 @@ def render_inner_page(page, lang):
       <span>{BRAND}</span>
     </a>
     <nav class="nav-links" aria-label="{u["nav_aria"]}">
+      <a class="home-button" href="https://barakahtechnologies.net/{fname("index", lang)}" aria-label="Barakah Technologies — {HOME_LABELS[lang]}">{HOME_LABELS[lang]}</a>
       <a href="{fname("index", lang)}#features">{u["nav_features"]}</a>
       <a href="{fname("index", lang)}#privacy">{u["nav_privacy"]}</a>
       <a href="{fname("support", lang)}"{support_current}>{u["nav_support"]}</a>
