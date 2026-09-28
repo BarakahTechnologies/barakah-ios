@@ -173,6 +173,7 @@ def render_index(lang):
   <style>
 {css}
   </style>
+  <link rel="stylesheet" href="assets/family.css?v=20260927-refinement" />
 </head>
 <body>
 <header class="nav">
@@ -255,6 +256,7 @@ def render_inner_page(page, lang):
   <style>
 {css}
   </style>
+  <link rel="stylesheet" href="assets/family.css?v=20260927-refinement" />
 </head>
 <body>
 
